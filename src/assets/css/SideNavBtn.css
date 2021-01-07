@@ -1,0 +1,11 @@
+.sideNavBtn {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: white;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	cursor: pointer;
+}
