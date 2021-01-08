@@ -1,77 +1,24 @@
 .carousel {
-	width: 100%;
-	background-color: transparent;
-	position: relative;
-}
-
-.carousel__imgContainer {
 	margin: 0 auto;
-	max-width: 80%;
-	list-style: none;
-	position: relative;
-	display: flex;
-	overflow: hidden;
+	width: 1600px;
+	height: 320px;
 }
 
-.carousel__imgContainer > li {
+.carousel img {
 	width: 100%;
-	opacity: 0;
-	transform: translateX(999px);
-}
-
-.carousel__imgContainer > li.active {
-	transition: all 0.5s ease-in-out;
-	position: absolute;
-	opacity: 1;
-	transform: translateX(0);
-}
-
-.carousel__imgContainer > li > img {
-	width: 100vw;
 	height: 100%;
-	object-fit: contain;
 }
 
-.carousel > .bullets {
-	margin-top: -50px;
-	list-style: none;
-	display: flex;
-	gap: 10px;
-	justify-content: center;
+.carousel .swiper-pagination-bullet-active {
+	background-color: white;
 }
 
-.carousel > .bullets > li {
+.carousel .swiper-pagination-bullet {
 	width: 15px;
 	height: 15px;
-	border-radius: 50%;
-	background-color: rgba(225, 255, 255, 0.2);
-	cursor: pointer;
-	z-index: 999;
 }
 
-.carousel > .arrow {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	color: white;
-	font-size: 36px;
-	cursor: pointer;
-	transition: background-color 0.5s ease-in-out;
-	height: 100%;
-	display: inline-flex;
-	align-items: center;
-}
-
-.carousel > .arrow:hover {
-	background: rgba(0, 0, 0, 0.2);
-}
-
-.carousel__prev {
-	left: 0;
-	padding: 0 20px;
-}
-
-.carousel__next {
-	right: 0;
-	padding: 0 20px;
+.carousel .swiper-button-disabled {
+	display: none;
+	opacity: 0;
 }

@@ -1,0 +1,32 @@
+.movieSlider img {
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+}
+
+.movieSlider .swiper-slide {
+	width: 300px !important;
+	height: 300px !important;
+	object-fit: cover;
+	object-position: center;
+	margin: 0 10px;
+}
+
+.movieSlider {
+	height: auto;
+	margin-left: 50px;
+}
+
+.movieSlider .swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+.movieSlider__title {
+	color: white;
+	margin-bottom: 15px;
+}
+
+.movieSlider__title .prime {
+	color: #00a8e1;
+}
