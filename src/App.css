@@ -1,6 +1,15 @@
-.app__body {
+/* .app__body {
 	background-color: #0f171e;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	position: relative;
+} */
+
+.home {
+	background-color: #0f171e;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: relative;
 }
