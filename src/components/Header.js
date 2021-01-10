@@ -1,12 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../assets/css/Header.css";
 import SearchInput from "./SearchInput";
 import SideNavBtn from "./SideNavBtn";
 import HeaderOption from "./HeaderOption";
 import { useSelector, useDispatch } from "react-redux";
 import { mouseEnter, mouseLeave } from "../features/hoverSlice";
+import {
+	selectUser,
+	logout,
+	logoutWithFirebase,
+} from "../features/user/userSlice";
 
 function Header() {
+	const user = useSelector(selectUser);
+
 	const dispatch = useDispatch();
 
 	const handleMouseEnter = () => {
@@ -15,6 +23,25 @@ function Header() {
 
 	const handleMouseLeave = () => {
 		dispatch(mouseLeave());
+	};
+
+	const renderAuthComponents = () => {
+		if (user.isAuth) {
+			return (
+				<button onClick={() => dispatch(logoutWithFirebase())}>
+					Logout
+				</button>
+			);
+		} else {
+			return (
+				<>
+					<Link to="/login">Sign in</Link>
+					<small>
+						New customer? <Link to="/register">Start here.</Link>
+					</small>
+				</>
+			);
+		}
 	};
 
 	return (
@@ -53,13 +80,14 @@ function Header() {
 						onMouseEnter={handleMouseEnter}
 						onMouseLeave={handleMouseLeave}
 					>
-						<p>Hello, Sign in</p>
+						<p>
+							Hello, {user.isAuth ? user.displayName : "Sign in"}
+						</p>
 						<h4>Account & Lists</h4>
 
 						<div className="dropdown account">
 							<div className="account__top">
-								<button>Sign in</button>
-								<small>New customer? Start here.</small>
+								{renderAuthComponents()}
 							</div>
 							<div className="account__bottom">
 								<div className="account__bottom__left">
